@@ -1,0 +1,48 @@
+readme: Config file for the Deforming Things 4D dataset
+
+optimizer:
+  lr: 1e-3
+
+split: test  # test/train
+key_points: 12
+batch_size: 32 # 24 for train
+max_epoch: 400 # 400
+num_workers: 0 # 6
+class_name: tigerD8H #  doggieMN5 # rhino  # tigerD8H #  chickenDC #  elephantLN0 #  deerK5L # BunnyQ # bullMJ6 # bear #   deerK5L_symmetry # bearPDD # elephantLN0 # sheep #  huskydog3T #    deerK5L # bull2 # # deerK5L # all
+num_points: 2048
+save_results: False
+
+parameters:
+  rec: 1   # rec Reconstruction loss
+  cov: 2.5 # cov: coverage_loss
+  surf: 6  # surf: Surface loss
+  smt: 2 # smt: Smoothing loss
+  geo: 6 # geo: Geodesic loss
+
+augmentation:
+  shuffle: False
+  normalize_pc: True
+  gaussian_noise: False
+  uniform_sampling: False
+
+  lamda: 0.00  # gaussian noise scale
+  sample_points: 2048 # point to be sampled uniformly from original point cloud
+
+thresholds:
+  inclusivity: 0.05
+
+
+data:
+  output_dir: outputs/${split}/${class_name}
+  pcd_root: dataset/DeformingThings4D/pcds_geodesics  # pcds and geodesics
+  pcd_root_pck: dataset/DeformingThings4D/correspondences_for_pck  # pcds with frame-wise correspondences
+  best_model_path: outputs/train/tigerD8H/Best_model_tigerD8H_12kp.pth # Please train the network to generate the  Best_model_human_12kp.pth
+
+hydra:
+  run:
+    dir: ${data.output_dir}
+  sweep:
+    dir: ${data.output_dir}
+    subdir: ${data.output_dir}/${split}
+
+
