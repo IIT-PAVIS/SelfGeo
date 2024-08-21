@@ -231,7 +231,7 @@ def create_pcds_and_correspondences():
     categories = os.listdir(data_dir)
     categories_iter = tqdm(categories)
 
-    pdb.set_trace()
+    # pdb.set_trace()
 
     for category in categories_iter:
         output_path = os.path.join(output_dir, category)
