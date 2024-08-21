@@ -43,9 +43,15 @@ We provide a sample set for the CAPE and Deforming Things 4D in the folder "data
 
 **CAPE dataset:**
 
-We proved the processed sample set (containing PCDs and geodesics). 
-The data processing steps are described for the Deforming Things 4D dataset.
-We use the following structure for the CAPE dataset:
+**Download** the sample of the processed CAPE dataset from the following link: 
+
+**[https://drive.google.com/drive/folders/1NP9Ow8CbKAVhhmrHHlZ_MAhle5ehilPj?usp=sharing](https://drive.google.com/drive/folders/1NP9Ow8CbKAVhhmrHHlZ_MAhle5ehilPj?usp=sharing)**
+
+- The processed sample set contains PCDs and geodesics. 
+- The data processing steps are described for the Deforming Things 4D dataset.
+- Download and save it to the dataset folder.
+- We use the following structure for the CAPE dataset:
+
 ```
 CAPE/
   |_ train
@@ -75,7 +81,7 @@ CAPE/
 **Deforming Things 4D dataset:**
 
 In the dataset directory **/dataset/DeformingThings4D/**, we provide a sample of the original dataset **original_dataset**, **sdk.py** and **splits**.
-- The "original_dataset" contains two categories (tigerD8H_Jump0 and tigerD8H_Jump1) of the Deforming Things 4D dataset. Each category contains screenshots of the frames and category.anime file.
+- The "original_dataset" contains **tigerD8H_Jump0** category of the Deforming Things 4D dataset. It contains screenshots of the frames and category.anime file.
 The remaining categories can be added in the same folder.
 - The "sdk.py" can be used to generate PCDs, Geodesics and to separate offsets required for PCK computation.
 - To generate the geodesics and pcds, uncomment ```create_pcds_geodesics()``` and run the "sdk.py" as: ```python dataset/DeformingThings4D/sdk.py```.
